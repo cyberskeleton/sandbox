@@ -1,0 +1,6 @@
+s = input('введіть рядок')
+s = s.replace('+', '++')
+s = s.replace('-', '--')
+k = s.count('+')
+n = s.count('-')
+print(s, 'k = ', k, 'n = ', n)

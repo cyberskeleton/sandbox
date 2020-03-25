@@ -23,4 +23,4 @@ def get_list(filename):
     f.close()
     return listok
 
-print(get_list('text.txt'))
+print(get_list('tokill/text.txt'))

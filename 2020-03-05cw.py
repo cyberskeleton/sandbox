@@ -41,10 +41,10 @@ class Iter(Text):
             for i in str.split():
                 if i ==  word.split[0]:
                     return word
-text = Text('document.txt')
+text = Text('tokill/document.txt')
 print(text.word_append())
 print(text.__len__())
 #print(text.remove_specials())
 print('concatenation: ', text.__add__('realnum.txt'))
-i = Iter('document.txt')
+i = Iter('tokill/document.txt')
 print(i.find('в'))

@@ -1,4 +1,4 @@
-azazel = open('azazel.txt', 'r+', encoding='utf-8')
+azazel = open('tokill/azazel.txt', 'r+', encoding='utf-8')
 specials = {ord(','), ord('.'), ord(';'), ord(':'), ord('-'), ord('!'), ord('?'), ord('"'), ord("'"), 8212, 171, 8230, 187}
 print(specials)
 lines = azazel.read()

@@ -42,7 +42,7 @@ def dec_insert(func):
     return pls_do
 
 def read_lines_from_file():
-    f = open('text.txt', 'r')
+    f = open('tokill/text.txt', 'r')
     data = f.read().splitlines()
     random_line = random.choice(data)
     f.close()

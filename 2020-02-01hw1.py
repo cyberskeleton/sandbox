@@ -1,7 +1,7 @@
 import sympy
 
 def read_file():
-    file = open('coefficients.txt', 'r')
+    file = open('tokill/coefficients.txt', 'r')
     coefs = file.read()
     coefs_split = coefs.strip('\n').split(', ')
     return(coefs_split)

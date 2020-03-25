@@ -1,4 +1,4 @@
-f = open('realnum.txt', 'r')
+f = open('tokill/realnum.txt', 'r')
 data = f.read()
 res = 0
 for num in data.split(' '):

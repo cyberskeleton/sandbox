@@ -1,4 +1,5 @@
-import draft
+from tokill import draft
+
 a = int(input('input starting point: '))
 b = int(input('input ending point: '))
 segment = draft.segment(a, b)

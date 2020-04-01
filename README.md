@@ -5,6 +5,9 @@
 
 ## homework 19
 
+## classwork 19
+* [tictactoe game](2020-04-01cw1.py)
+
 ## homework 18
 
 ## homework 17

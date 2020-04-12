@@ -270,8 +270,8 @@ class TickTackToe(Drawable):
         return 0
 
 tile_size = 100
-drawable = TurtleDraw(tile_size)
-# drawable = CharDraw(tile_size)
+#drawable = TurtleDraw(tile_size)
+drawable = CharDraw(tile_size)
 ttt = TickTackToe(drawable, tile_size, 'black', 'lightblue', 10)
 ttt.draw_board()
 ttt.main()

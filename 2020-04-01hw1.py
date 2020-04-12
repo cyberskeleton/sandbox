@@ -25,6 +25,5 @@ class MyClass:
             result += 1
         print('result: ', result)
 
-logtime_data ={}
 MyClass.my_method()
 MyClass.my_another_method()

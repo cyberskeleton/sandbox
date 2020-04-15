@@ -1,0 +1,5 @@
+UAH
+USD
+EUR
+GBP
+CAD

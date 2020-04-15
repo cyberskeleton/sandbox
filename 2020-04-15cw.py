@@ -2,7 +2,7 @@
 from tkinter import *
 from tkinter.messagebox import *
 
-class DoubleList:
+class Converter:
 
     def __init__(self, master, file_curr, file_rates):
         self.root = master
@@ -36,9 +36,6 @@ class DoubleList:
         print(self._dict_rates)
 
     def _make_widgets(self):
-        '''Створити елементи для вибору зі списку.
-        '''
-        # Рамка та список усіх значень
         self._frame_left = Frame(self.root)
         self._sbar_currencies = Scrollbar(self._frame_left)
         self._sbar_currencies.pack(side=RIGHT, fill=Y)
@@ -46,8 +43,6 @@ class DoubleList:
         self._sbar_currencies.config(command=self._lbox_currencies.yview)
         self._lbox_currencies.pack(side=RIGHT, fill=BOTH, expand=YES)
         self._frame_left.pack(side=LEFT, fill=Y, expand=YES)
-        # зв'язати подвійне натиснення лівої клавіші миші
-        # з функцією обробки self._right_handler
         self._lbox_currencies.bind('<Double-1>', self._add_currency)
         self._fill_list(self._list_currencies, self._lbox_currencies)
 
@@ -77,7 +72,7 @@ class DoubleList:
         self._frame_right.pack(side=LEFT, fill=Y, expand=YES)
 
     def _fill_list(self, items, lst):
-        lst.delete(0, END)  # очистити список на екрані
+        lst.delete(0, END)
         for item in items:
             lst.insert(END, item)
 
@@ -87,13 +82,11 @@ class DoubleList:
             if count >= 2:
                 showwarning(message='Currencies already selected!')
                 return
-            # отримати вибраний елемент списку
             cur_sel = self._lbox_currencies.curselection()
             elem = self._lbox_currencies.get(cur_sel)
             if not elem:
                 return
             index = cur_sel[0]
-            # оновити список
             self._lbox_currencies.delete(index)
             value = self._list_currencies[index]
             self._list_selected.append(value)
@@ -104,11 +97,8 @@ class DoubleList:
             del self._list_currencies[index]
 
         except TclError:
-            # пропустити помилку curselection, якщо під час
-            # подвійного натиснення лівої клавіші миші список порожній
             pass
         except Exception as e:
-            # якщо інша помилка, то видати повідомлення
             showwarning('Error: ', e)
 
     def _convert(self):
@@ -118,11 +108,8 @@ class DoubleList:
             print(key, value)
             self._lbl_sum.config(text=value)
         except TclError:
-            # пропустити помилку curselection, якщо під час
-            # подвійного натиснення лівої клавіші миші список порожній
             pass
         except Exception as e:
-            # якщо інша помилка, то видати повідомлення
             showwarning('Помилка', e)
 
     def ok_handler(self, ev=None):
@@ -150,20 +137,13 @@ class DoubleList:
         self._lbl_sum.config(text=self.txt_sum)
 
     def get(self):
-        '''Повернути cписок вибраних елементів.
-
-           Якщо каталог не вибрано, то повертається порожній рядок.
-        '''
         result = self.txt_sum if not self._cancel else None
         return result
 
 
 def main():
-    '''Функція для тестування.
-       Працює, коли модуль є головним
-    '''
     top = Tk()
-    d = DoubleList(top, 'converter_curr.txt', 'converter_rate.txt')
+    d = Converter(top, 'converter_curr.txt', 'converter_rate.txt')
     mainloop()
     val = d.get()
 

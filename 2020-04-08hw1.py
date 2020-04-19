@@ -1,7 +1,7 @@
 from tkinter import *
 
 root = Tk()
-enter = Entry(root, bg = 'cyan', fg = 'blue', borderwidth = 100)
+enter = Entry(root, bg = 'cyan', fg = 'blue', borderwidth = 50)
 enter.pack()
 last = 0
 count = 0

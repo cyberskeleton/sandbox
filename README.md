@@ -1,10 +1,13 @@
 # Homeworks
 
 ## homework 20
-* [Graphic interface 20.4](2020-04-08hw1.py)
-* [Graphic interface 20.5](2020-04-08hw2.py)
+* [Graphic interface 20.4  -- Check sign](2020-04-08hw1.py)
+* [Graphic interface 20.5  -- Delete Brackets](2020-04-08hw2.py)
+* [Graphic interface 20.11 -- Toy Store](2020-04-16hw.py)
+
 ## classwork 20
-* [tkinter](2020-04-09cw1.py)
+* [tkinter -- Currency Converter](2020-04-15cw.py)
+* [tkinter -- Currency Exchange](2020-04-09cw1.py)
 
 ## homework 19
 * [Decorators 19.7](2020-04-01hw1.py)

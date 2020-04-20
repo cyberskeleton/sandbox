@@ -54,7 +54,6 @@ class MusicRecord(MusicPiece, SoundRecord):
 class Playlist():
     def __init__(self, records):
         self.records = records
-        self.pattern = ''
 
     def create_random(self):
         result = list(self.records)
@@ -65,7 +64,6 @@ class Playlist():
         return result
 
     def create_by_author(self, author):
-        self.pattern = author
         result = []
         print("Playlist by author: ", author)
         for i in self.records:
@@ -75,7 +73,6 @@ class Playlist():
         return result
     
     def create_by_genre(self, genre):
-        self.pattern = genre
         result = []
         print("Playlist by genre: ", genre)
         for i in self.records:

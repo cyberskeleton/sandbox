@@ -74,6 +74,7 @@ l = FullOrderWeightedList([a, b, c, d, e])
 print("Greater or Equal:")
 for i in range(1, len(l)):
   print(l[i].__ge__(l[i - 1]), end=' ')
+  print(l)
 print()
 
 print("Equal:")

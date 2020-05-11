@@ -70,6 +70,27 @@ class Converter:
         self._frame_btm.pack(side=TOP, fill=Y, expand=NO)
 
         self._frame_right.pack(side=LEFT, fill=Y, expand=YES)
+        menubar = Menu(self.root, tearoff=0)
+        menubar.add_command(label='Load data', command=self._load_data)
+        menubar.add_command(label='Refresh', command=self._refresh)
+        menubar.add_command(label='Cancel', command=self.root.quit)
+
+        frame = Frame(self.root)
+        frame.pack()
+
+        def popup(event):
+            menubar.post(event.x_root, event.y_root)
+
+        frame.bind("<Button-3>", popup)
+
+        self.check = Checkbutton( justify='center',text='Calculate', command=self.ok_handler)
+        self.check.pack(side=TOP, expand=YES)
+
+        self.read_curr_but = Button(text='Currency file', command=self._read_currencies).pack(fill=X)
+        self.read_rate_but = Button(text='Rate file', command=self._read_rates).pack(fill=X)
+        askquestion('Continue?')
+
+        self.root.config(menu=menubar)
 
     def _fill_list(self, items, lst):
         lst.delete(0, END)
